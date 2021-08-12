@@ -16,8 +16,8 @@ namespace Infrastructure.Base
 
         #region Repositories
 
-        private IUserRepository _userRepository;
-        public IUserRepository UserRepository => _userRepository ??= new UserRepository(_dbContext);
+        private IPersonaRepository _personaRepository;
+        public IPersonaRepository PersonaRepository => _personaRepository ??= new PersonaRepository(_dbContext);
         #endregion
 
         public void Dispose()

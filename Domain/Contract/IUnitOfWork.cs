@@ -6,7 +6,7 @@ namespace Domain.Contract
     public interface IUnitOfWork : IDisposable
     {
         #region [Repositories]
-        public IUserRepository UserRepository { get;}
+        public IPersonaRepository PersonaRepository { get;}
         #endregion
 
         int Commit();

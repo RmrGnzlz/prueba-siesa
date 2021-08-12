@@ -4,9 +4,9 @@ using Infrastructure.Base;
 
 namespace Infrastructure.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class PersonaRepository : GenericRepository<Persona>, IPersonaRepository
     {
-        public UserRepository(IDbContext context) : base(context)
+        public PersonaRepository(IDbContext context) : base(context)
         {
         }
     }

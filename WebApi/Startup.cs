@@ -1,6 +1,8 @@
 using System;
 using System.Text;
+using Domain.Contract;
 using Infrastructure;
+using Infrastructure.Base;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +32,8 @@ namespace WebApi
 
             services.AddDbContext<MyContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("Postgres"),
                 o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IDbContext, MyContext>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(
